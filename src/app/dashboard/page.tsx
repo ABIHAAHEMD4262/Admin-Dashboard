@@ -45,6 +45,7 @@ export default function AdminDashboard() {
   const [isUserLoaded, setIsUserLoaded] = useState(false);
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [selectedOrder, setSelectedOrder] = useState<string | null>(null);
+ 
 
   // Fetch orders from Sanity
   useEffect(() => {
@@ -201,17 +202,17 @@ export default function AdminDashboard() {
       </div>
 
       {/* Orders Table */}
-      <div className="flex-1 p-6 overflow-y-auto text-black">
+      <div className="flex-1 p-6 overflow-y-auto text-red-600">
         <h2 className="text-2xl font-bold text-center mb-6">Orders</h2>
         <div className="overflow-x-auto bg-white rounded-lg shadow-sm">
           <table className="min-w-full">
             <thead>
               <tr className="bg-gray-200">
-                <th className="px-6 py-3 text-left text-black">ID</th>
-                <th className="px-6 py-3 text-left text-black">Customer</th>
-                <th className="px-6 py-3 text-left text-black">Total</th>
-                <th className="px-6 py-3 text-left text-black">Status</th>
-                <th className="px-6 py-3 text-left text-black">Actions</th>
+                <th className="px-6 py-3 text-left text-red-600">ID</th>
+                <th className="px-6 py-3 text-left text-red-600">Customer</th>
+                <th className="px-6 py-3 text-left text-red-600">Total</th>
+                <th className="px-6 py-3 text-left text-red-600">Status</th>
+                <th className="px-6 py-3 text-left text-red-600">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-200">
@@ -280,7 +281,10 @@ export default function AdminDashboard() {
                                     height={64} // Set height
                                     className="w-16 h-16 object-cover rounded-lg"
                                   />
+
                                 )}
+        
+
                                 <div>
                                   <p>Product: {item.product.name}</p>
                                   <p>Quantity: {item.quantity}</p>
@@ -295,6 +299,7 @@ export default function AdminDashboard() {
                   )}
                 </React.Fragment>
               ))}
+              
             </tbody>
           </table>
         </div>
