@@ -263,6 +263,9 @@ export default function AdminDashboard() {
                         <p>
                           City: <strong>{order.city}</strong>
                         </p>
+                        <p>
+                          Address: <strong>{order.address}</strong>
+                        </p>
                         <h4 className="font-bold mt-4">Cart Items:</h4>
                         <ul>
                           {order.cartItems.map((item) => (
